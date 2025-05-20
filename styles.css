@@ -5,6 +5,9 @@ body, ul, li, p {
     font-size: 1.2rem;
     font-family: Arial;
 }
+body{
+    margin-bottom: 20px;
+}
 a{
     text-decoration: none;
     color: white;
@@ -78,7 +81,7 @@ img{
 
 @media (max-width:600px){
     .grid1{
-        grid-template-columns: repeat(2 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
     
     .grid1 > div:nth-child( n + 4) {
@@ -90,4 +93,66 @@ img{
         grid-row: auto;
         order: -1;
     }
+}
+
+/* CSS GRID 2 */
+
+.grid2{
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    gap: 20px;
+    max-width: 800px;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.sidebar > div {
+    margin-bottom: 10px;
+}
+
+@media (max-width:600px){
+    .grid2{
+        grid-template-columns: 1fr;
+    }
+    
+    .sidebar > div {
+        margin-bottom: 0;
+        flex: 1 0 200px;
+        margin: 0 10px;
+    }
+    .sidebar {
+        display: flex;
+        overflow: scroll;
+    }
+}
+
+.grid3{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 10px;
+}
+
+.grid3-item:nth-child(1) {
+    grid-row: 1/3;
+}
+
+.grid3-item{
+    display: grid;
+}
+
+.grid3-item img {
+    grid-column: 1;
+    grid-row: 1/3;
+}
+
+.grid3-item p {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    color: white;
+    grid-column: 1;
+    grid-row: 2/3;
+    align-self: end;
 }
